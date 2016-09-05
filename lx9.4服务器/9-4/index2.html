@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+<!--submit怎么都可以提交，可以写一个事件阻止它-->
+<!--button没有提交的真正功能，只是按钮效果，所以要写一个事件帮助他提交-->
+    <script>
+        function $(name){
+            return document.getElementsByName(name).item(0);
+        }
+        function checkInfo(){
+            var uname=$("uname").value;
+            var pwd=$("pwd").value;
+
+            if(uname==""){
+                alert("用户不能为空");
+                return false;
+            }
+
+            if(pwd==""){
+                alert("密码不能为空");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+    <form action="127.0.0.1:8888/addUser" method="GET" onsubmit="return checkInfo()">
+        <label>用户名:</label>
+        <input type="text" name="uname" />
+        <label>密码：</label>
+        <input type="password" name="pwd" />
+        <input type="submit" value="提交" onclick="checkInfo()"/>
+        <input type="button" value="注册" onclick="location.href='http://127.0.0.1:8888/showreg'"/>
+    </form>
+    <a href="http://127.0.0.1:8888/showreg">注册新账号</a>
+</html>
