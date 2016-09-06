@@ -3,11 +3,11 @@
  */
 var net=require("net");
 //创建服务器
-//var server=net.createServer(function(socket){
-//    //socket:套接字
-//    console.info("有客户端连接上来了。。。");
-//    console.info(socket);
-//});
+var server=net.createServer(function(socket){
+    //socket:套接字
+    console.info("有客户端连接上来了。。。");
+    console.info(socket);
+});
 
 //server.listen(8888); server.listen(8888,"127.0.0.1")
 //server.listen(8888,function(){
