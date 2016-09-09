@@ -1,0 +1,2 @@
+ 创建数据库 stusys
+ create database stusys charcter set utf8;
