@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.9.1.js"></script>
+    <script>
+       $(function(){
+           //当页面加载完成后，向服务器发送一个请求获取所有班级信息
+           $.get("/getAllClassInfo",null,function(data){
+               // console.info(data);
+               if(data.code){
+                    switch(data.code){
+                        case 0:alert("数据库连接失败。。。");break;
+                        case 1:alert("数据库查询失败。。。");break;
+                    }
+               }else{
+                   var str;
+                   $.each(data,function(index,item){
+                       str="";
+                       str="<option value='"+item.cid+"'>"+item.cname+"</option>";
+                       $("#classInfo").append($(str));
+                   });
+               }
+           },"json");
+       });
+
+    </script>
+    <style>
+        body,*{
+            margin:0px auto;
+            padding:0px;
+            font-family:"微软雅黑";
+        }
+        fieldset{
+            width:50%;
+        }
+        label{
+            display: inline-block;
+            width:200px;
+            text-align:right;
+        }
+        ul{
+            list-style-type:none;
+        }
+        li{
+            line-height:30px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>学生注册</legend>
+        <form action="/adduser" method="post">
+           <ul>
+                <li><label>班级:</label></li>
+            <select name="cid" id="classInfo">
+
+            </select>
+               <li><label for="sname">学生姓名</label>
+            <input type="text" name="sname" id="sname" /></li>
+               <li><label for="pwd">密码：</label>
+            <input type="password" name="pwd" id="pwd" /></li>
+               <li><label>性别:</label>
+            <input type="radio" name="sex" value="男" />男
+            <input type="radio" name="sex" value="女" checked/>女</li>
+               <li> <label for="age">年龄:</label>
+            <input type="number" name="age" id="age" /></li>
+               <li><label for="tel">联系方式：</label>
+            <input type="text" name="tel" id="tel" /></li>
+               <li><input type="submit" value="注册" /> </li>
+               </ul>
+        </form>
+    </fieldset>
+</body>
+</html>
