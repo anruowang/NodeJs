@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YC商场</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcot icon" href="images/yc2.png" type="image/x-icon">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <header>
+        <a href="javascript:showLogin()">[请先登录]</a>
+        <a href="javascript:showRegister()">[请先注册]</a>
+    </header>
+
+    <article>
+        <ul>
+            <li>
+               <dl>
+                   <dt> <img src="images/9-2.jpg"/></dt>
+                   <dd class="goods_price">商品价格：&yen;998</dd>
+                   <dd>商品名称，考点开放</dd>
+
+               </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>  <img src="images/9-2.jpg"/></dt>
+                    <dd class="goods_price">商品价格：&yen;998</dd>
+                    <dd>商品名称，考点开放</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>  <img src="images/9-2.jpg"/></dt>
+                    <dd class="goods_price">商品价格：&yen;998</dd>
+                    <dd>商品名称，考点开放</dd>
+                </dl>
+            </li>
+        </ul>
+    </article>
+
+    <footer>
+
+    </footer>
+    <div id="loginpages" style="z-index:99999;">
+        <div id="smallpage">
+            <div id="loginlogo">
+                <div style="float:left;" class="loginee">
+                    <span id="ids">登录</span>
+                </div>
+                <div style="float:right;">
+                    <a href="javascript:hidenloginpage()">
+                        <img style="width:24px; height:24px;" src="images/close_delete_2.png" />
+                    </a>
+                </div>
+            </div>
+            <hr style="border:1px solid #A6C9E1;width:100%" />
+            <form action="" method="post">
+                <dl>
+                    <div style="height:17px; overflow:hidden"></div>
+                    <dd>
+                        <span class="titles">用户名：</span>
+                        <input type="text" name="uname"	id="uname"/><span id="unamep">请输入昵称或邮箱</span>
+                    </dd>
+                    <br />
+                    <div style="height:17px; overflow:hidden"></div>
+                    <dd>
+                        <span class="titles">密&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+                        <input type="password" name="pwd" id="pwd"/><span id="pwdp">请输入您的密码</span>
+                    </dd>
+                </dl>
+                <div style="margin-left:70px; margin-bottom:10px;">
+                    <img alt="登录" src="images/loginss.png" onClick="userlogin()" style="margin-top:10px;float:left"/>
+                    <span style="margin-left:30px;float:left;margin-top:25px;">如果没有账号 <a href="javascript:showRegister()">免费注册</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="zcpages">
+        <div id="zcsmallpage">
+            <div id="loginlogos">
+                <div style="float:left;">
+                    <p id="ids">注册</p>
+                </div>
+                <div style="float:right;">
+                    <a href="javascript:hidenzcpage()"><img
+                            style="width:25px; height:25px;" src="images/close_delete_2.png" />
+                    </a>
+                </div>
+            </div>
+            <hr style="border:1px solid #A6C9E1;width:100%" />
+            <form action="" method="post">
+                <dl>
+                    <div style="height:17px; overflow:hidden"></div>
+                    <label class="labelInfo" for="uname">用户名称：</label>
+                   <!-- <input type="text" name="uname" id="zcuname" onblur="checkzcuname()" />-->
+                    <input type="text" name="uname" id="zcuname" />
+                    <p id="zcunamep">请输入您的昵称或注册邮箱(至少6位)</p>
+                    <label class="labelInfo" for="pwd">输入密码：</label>
+                   <!-- <input type="password" name="pwd" id="zcpwd" onblur="checkzcpwd()" />-->
+                    <input type="password" name="pwd" id="zcpwd" />
+                    <p id="zcpwdp">请输入您的登录密码(至少6位)</p>
+                    <label class="labelInfo" for="pwdagain">重复密码：</label>
+                   <!-- <input type="password" name="pwdagain" id="zcpwdagain" onblur="checkzcpwdagain()" />-->
+                    <input type="password" name="pwdagain" id="zcpwdagain" />
+                    <p id="zcpwdtwop">请重复输入您的登录密码(至少6位)</p>
+                    <label class="labelInfo" for="zcemail">输入邮箱：</label>
+                    <!--<input type="text" name="zcemail" id="zcemail" onblur="checkzcemail()" />-->
+                    <input type="text" name="zcemail" id="zcemail" />
+                </dl>
+                <div style="margin-left:30px;">
+                    <img alt="注册" src="images/zcss.png" onClick="userzc()" style="float:left"/>
+                    <span style="margin-left:20px;float:left;margin-top:15px;">如果已经有账号 <a href="javascript:showLogin()">马上登录</a></span>
+                </div>
+                <p id="registertishi" style="color: #CC6666;clear:both" ></p>
+            </form>
+        </div>
+    </div>
+    <div id="bg" class="bg" style="display:none;"></div>
+</body>
+</html>
