@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片管理</title>
+    <scripts src="showPic.js"></scripts>
+</head>
+<body>
+    <!--enctype="multipart/form-data" 不能少-->
+    <form action="uploadFile" method="post" enctype="multipart/form-data">
+        用户名：<input type="text" name="uname" />
+        请选择文件:<input type="file" name="file" multiple onchange="setImagePreviews(this,'showpic')"/>
+        <input type="submit" value="上传" />
+    </form>
+    <div id="showpic">
+
+    </div>
+</body>
+</html>
