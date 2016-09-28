@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息管理</title>
+    <link rel="shortcot icon" href="../images/yc2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/goods.css" />
+    <link rel="stylesheet" href="../css/basic.css" />
+    <script src="../js/jquery-1.9.1.js"></script>
+    <script src="../js/showPic.js"></script>
+</head>
+<body>
+<fieldset>
+    <legend>商品信息添加</legend>
+    <p>商品类型：<select name="tid" id="tid" ></select></p>
+    <p>商品名称：<input type="text" name="pname" id="pname" /></p>
+    <p>商品价格：<input type="number" name="price" id="price" /></p>
+    <p> 商品图片：<input type="file" name="pic" id="pic" onchange="setImagePreviews('this','showPic')" multiple/></p>
+    <p><input type="button" value="添加" /></p>
+        <div id="showpic">
+
+        </div>
+
+
+</fieldset>
+<fieldset>
+    <legend>商品信息管理</legend>
+    <table width="90%" border="1px"
+</fieldset>
+</body>
+</html>
