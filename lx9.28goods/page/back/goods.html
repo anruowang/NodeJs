@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息管理</title>
+    <link rel="shortcot icon" href="../images/yc2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/goods.css" />
+    <link rel="stylesheet" href="../css/basic.css" />
+    <script src="../js/jquery-1.9.1.js"></script>
+    <script src="../js/showPic.js"></script>
+    <script src="../js/goods.js"></script>
+    <script src="../js/ajaxfileupload.js"></script>
+</head>
+<body>
+<fieldset>
+    <legend>商品信息添加</legend>
+    <p>商品类型：<select name="tid" id="tid" ></select><a href="goodstype.html">添加商品类型</a></p>
+    <p>商品名称：<input type="text" name="pname" id="pname" /></p>
+    <p>商品价格：<input type="number" name="price" id="price" /></p>
+    <p> 商品图片：<input type="file" name="pic" id="pic" onchange="setImagePreviews('this','showPic')" multiple/></p>
+    <p><input type="button" value="添加" onclick="addGoods()"/></p>
+        <div id="showpic">
+
+        </div>
+
+
+</fieldset>
+<fieldset>
+    <a href="javascript:showGoodsInfo">显示全部商品信息</a>
+    <legend>商品信息管理</legend>
+    <table width="90%" border="1px" cellspacing="0" cellpadding="0" align="center">
+        <thead>
+            <tr>
+                <td>商品图片</td>
+                <td>商品编号</td>
+                <td>商品名称</td>
+                <td>商品价格</td>
+                <td>商品类型</td>
+            </tr>
+        </thead>
+        <tbody id="showGoodsInfo">
+
+        </tbody>
+    </table>
+</fieldset>
+</body>
+</html>
